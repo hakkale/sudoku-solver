@@ -39,26 +39,26 @@ class Problem(object):
 
         return True
 
-    # Return set of valid numbers from values that do not appear in used
     def filter_values(self, values, used):
+        """Return set of valid numbers from values that do not appear in used"""
         return [number for number in values if number not in used]
 
-    # Return first empty spot on grid (marked with 0)
     def get_spot(self, board, state):
+        """Return first empty spot on grid (marked with 0)"""
         for row in range(board):
             for column in range(board):
                 if state[row][column] == 0:
                     return row, column
 
-    # Filter valid values based on row
     def filter_row(self, state, row):
+        """Filter valid values based on row"""
         number_set = range(1, self.size+1) # Defines set of valid numbers that can be placed on board
         in_row = [number for number in state[row] if (number != 0)]
         options = self.filter_values(number_set, in_row)
         return options
 
-    # Filter valid values based on column
     def filter_col(self, options, state, column):
+        """Filter valid values based on column"""
         in_column = []
         for column_index in range(self.size):
             if state[column_index][column] != 0:
@@ -66,8 +66,8 @@ class Problem(object):
         options = self.filter_values(options, in_column)
         return options
 
-    # Filter valid values based on quadrant
     def filter_quad(self, options, state, row, column):
+        """Filter valid values based on quadrant"""
         in_block = [] # List of valid values in spot's quadrant
         row_start = int(row / self.height) * self.height
         column_start = int(column/3)*3
