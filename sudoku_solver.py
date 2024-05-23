@@ -2,52 +2,6 @@ from BFS_Sudoku import BFS_solve
 from DFS_Sudoku import DFS_solve
 
 
-print("\n\nTesting on easy 6x6 grid...")
-grid = [[6,0,0,0,0,0],
-      [0,0,1,3,0,6],
-      [0,0,4,0,0,0],
-      [1,2,0,0,0,0],
-      [0,0,0,0,0,4],
-      [3,0,5,0,0,0]]
-
-print("Problem:")
-for row in grid:
-      print (row)
-
-BFS_solve(grid)
-DFS_solve(grid)
-
-print("\n\nTesting on hard 6x6 grid...")
-grid = [[0,0,0,3,0,0],
-      [0,0,0,0,5,0],
-      [0,0,3,0,0,0],
-      [0,5,0,0,0,0],
-      [6,0,0,5,4,0],
-      [0,0,2,0,6,0]]
-
-print("Problem:")
-for row in grid:
-      print(row)
-
-BFS_solve(grid)
-DFS_solve(grid)
-
-print("\n\nTesting on expert 6x6 grid...")
-grid = [[0,3,0,1,0,0],
-      [0,0,0,6,4,0],
-      [0,0,5,0,2,0],
-      [0,0,0,0,0,0],
-      [4,0,0,0,0,0],
-      [0,5,1,0,0,0]]
-
-
-print("Problem:")
-for row in grid:
-      print(row)
-
-BFS_solve(grid)
-DFS_solve(grid)
-
 print("\n\nTesting on invalid 9x9 grid...")
 grid = [[0,0,9,0,7,0,0,0,5],
       [0,0,2,1,0,0,9,0,0],
